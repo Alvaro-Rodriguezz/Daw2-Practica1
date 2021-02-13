@@ -1,21 +1,34 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <h1>Home</h1>
+<ion-header no-border class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form class="form" [formGroup]="validationsForm"  (ngSubmit)="onSubmit()">
-    <ion-item lines="none">
-      <ion-input formControlName="name"  placeholder="Nombre"></ion-input>
-    </ion-item>
-    <ion-item  lines="none">
-      <ion-input formControlName="phone"  placeholder="Teléfono"></ion-input>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-input placeholder="Descripcion"></ion-input>
-    </ion-item>
-  </form>
+
+    <div class="title">
+      <h1 class="title__h1">Formulario</h1>
+      <h2 class="title__h2">Desarrollo de Aplicaciones Web 2</h2>
+    </div>
+  
+    <form [formGroup]="validationsForm" (ngSubmit)="onSubmit()" class="form">
+      <ion-item class="form__input-container" lines="none">
+        <ion-input formControlName="name" class="form__input" placeholder="Nombre"></ion-input>
+      </ion-item>
+      <ion-item class="form__input-container" lines="none">
+        <ion-input formControlName="phone" class="form__input" placeholder="Teléfono"></ion-input>
+      </ion-item>
+      <ion-item class="form__input-container" lines="none">
+        <ion-input formControlName="description" class="form__input" placeholder="Descripción"></ion-input>
+      </ion-item>
+        <div class="register">
+          <ion-button [disabled]="validationsForm.invalid" class="save_button" type="submit">Guardar datos</ion-button>
+      </div>
+    </form>
+  
+  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="secondary">
       <ion-icon name="person"></ion-icon>

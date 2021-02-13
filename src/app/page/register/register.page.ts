@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, SelectMultipleControlValueAccessor } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import {AuthenticateService} from '../../services/authentication.service';
 import { ToastController } from '@ionic/angular';
+import { AuthenticateService } from 'src/app/services/authenntication.service';
 
 @Component({
   selector: 'app-register',
@@ -60,7 +60,7 @@ export class RegisterPage implements OnInit {
       this.authService.registerUser(value)
       .then(res => {
         console.log(res);
-        console.log('La cuenta se creo correctamente');
+        this.presentToast('La cuenta se creo correctamente');
         this.errorMessage = '';
         this.navCtrl.navigateForward('/home').then((e) => {
           if (e) {
@@ -72,11 +72,13 @@ export class RegisterPage implements OnInit {
         });
       }, err => {
         console.log(err);
-        this.errorMessage = err.message;
+        this.presentToast(err.message);
         this.successMessage = '';
       });
-    } 
-    this.presentToast();
+    } else {
+
+      this.presentToast('Las contraseñas deben coincidir');
+    }
 
   }
 
@@ -101,11 +103,12 @@ export class RegisterPage implements OnInit {
     return false;
   }
 
-  async presentToast() {
+  async presentToast(mes) {
     const toast = await this.toastController.create({
-      message: 'Las contraseñas deben coincidir',
-      duration: 2000
+      message: mes,
+      duration: 4000
     });
     toast.present();
+    
   }
 }

@@ -1,2 +1,71 @@
 
-  
+ion-content {
+--ion-background-color: var(--ion-color-light);
+}
+ion-header {
+--ion-background-color: var(--ion-color-light);
+}
+ion-toolbar {
+--border: none;
+--ion-toolbar-background: var(--ion-color-light);
+}
+.title {
+font-family: arial, sans-serif;
+text-align: center;
+margin-bottom: 40px;
+}
+
+.title__h1 {
+font-size: 2em;
+color: var(--ion-color-secondary);
+}
+
+.title__h2 {
+font-size: 14px;
+}
+
+.form {
+// margin: 0 auto;
+text-align: center;
+margin-bottom: 50px;
+max-width: 400px;
+}
+
+.form__input-container {
+margin: 25px 0px;
+}
+
+.form__input {
+--background: white;
+--highlight-color-focused: none;
+--inner-border-width: 0;
+--padding-start: 50px !important;
+--placeholder-font-weight: 300;
+--placeholder-opacity: 1;
+font-family: 'Open Sans';
+border-radius: 15px;
+font-size: 16px;
+height: 50px;
+width: 100% !important;
+}
+
+.register {
+margin-top: 30px;
+}
+
+.save_button {
+--background: var(--ion-color-primary);
+--box-shadow: none;
+--border-radius: 25px;
+width: 173px;
+height: 40px;
+font-family: arial;
+font-size: 18px;
+text-transform: none;
+margin: 10px 0px;
+}
+
+
+.item-inner{
+padding:0 !important;
+}  
