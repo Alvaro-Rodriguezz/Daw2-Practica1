@@ -1,5 +1,5 @@
-
 export class Formulario {
-    Nombre: string;
-    Descripcion: string;
+    name: string;
+    phone: number;
+    description: string;
 }

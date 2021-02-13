@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import {AuthenticateService} from '../../services/authentication.service';
+import { AuthenticateService } from 'src/app/services/authenntication.service';
+
 
 @Component({
   selector: 'app-login',
