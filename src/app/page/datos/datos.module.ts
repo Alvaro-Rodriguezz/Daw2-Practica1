@@ -16,7 +16,6 @@ import { AccountInfoComponent } from 'src/app/component/account-info/account-inf
     IonicModule,
     DatosPageRoutingModule
   ],
-  declarations: [DatosPage, 
-    AccountInfoComponent]
+  declarations: [DatosPage]
 })
 export class DatosPageModule {}
