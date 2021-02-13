@@ -20,6 +20,13 @@
       <ion-item class="form__input-container" lines="none">
         <ion-input formControlName="phone" class="form__input" placeholder="Teléfono"></ion-input>
       </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.phone">
+          <div class="error-message" *ngIf="validationsForm.get('phone').hasError(validation.type) && (validationsForm.get('phone').dirty || validationsForm.get('phone').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
       <ion-item class="form__input-container" lines="none">
         <ion-input formControlName="description" class="form__input" placeholder="Descripción"></ion-input>
       </ion-item>
@@ -28,18 +35,6 @@
       </div>
     </form>
   
-  
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="secondary">
-      <ion-icon name="person"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button color="secondary" (click)="usuarioAlert()">
-        <ion-icon name="information"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="secondary" (click)="logout()">
-        <ion-icon name="power"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+    <app-account-info></app-account-info>
+
 </ion-content>

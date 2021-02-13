@@ -21,12 +21,16 @@ export class HomePage implements OnInit {
     phone: 0,
     userEmail: "",
   }
+  validationMessages = {
+    phone: [
+      { type: 'required', message: 'Un teléfono es necesario' },
+      { type: 'pattern', message: 'Introduce un teléfono válido (9 números)' }
+    ]};
   constructor(
     private authService: AuthenticateService,
     private navController: NavController,
     private formService: FormService,
-    private toastController: ToastController,
-    private alertController: AlertController
+    private toastController: ToastController
   ) {}
 
   ngOnInit() {
@@ -71,27 +75,5 @@ export class HomePage implements OnInit {
     });
     toast.present();
   }
-  async usuarioAlert() {
-    const alert = await this.alertController.create({
-      header: 'Usuario',
-      subHeader: this.userEmail,
-      buttons: ['Cerrar']
-    });
-    console.log(this.userEmail);
-    
-    await alert.present();
-    const result = await alert.onDidDismiss();
-    console.log(result);
-  }
 
-  logout() {
-    this.authService.logoutUser()
-        .then(res => {
-          this.navController.navigateBack('/login')
-          console.log(res);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-  }
 }

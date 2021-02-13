@@ -69,3 +69,11 @@ margin: 10px 0px;
 .item-inner{
 padding:0 !important;
 }  
+
+.validation-errors{
+    .error-message{
+        margin-top: -20px;
+        margin-bottom: -10px;
+        color: red;
+    }
+}

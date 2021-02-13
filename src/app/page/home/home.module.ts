@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
+import { AccountInfoComponent } from 'src/app/component/account-info/account-info.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { HomePage } from './home.page';
     HomePageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, 
+    AccountInfoComponent]
 })
 export class HomePageModule {}
